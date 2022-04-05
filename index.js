@@ -100,6 +100,8 @@ async function run() {
     }
 }
 run().catch(console.dir)
+
+// authentication using google
 app.get("/google", passport.authenticate("google", { scope: ["profile"] }));
 
 app.get(
@@ -110,6 +112,7 @@ app.get(
     })
 );
 
+// authentication using facebook
 app.get('/auth/facebook',
     passport.authenticate('facebook'));
 
